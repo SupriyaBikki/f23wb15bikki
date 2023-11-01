@@ -13,14 +13,19 @@ block content
 
   .container-fluid
     .row
-      each employe in results
+      each employe,index in results
         .col-sm-2
           p Employe Type: #{employe.employe_type}
           p Department : #{employe.department}
           p  Salary : #{employe.salary}
+          a(href="#" onclick=`buy(${index}); return false;`) Buy Employe #{index}
 
   a(href="/employe") Go Back
 
+  script.
+    function buy(index) {
+      alert(`You purchased employe ${index}`);
+    }
  
 
 
